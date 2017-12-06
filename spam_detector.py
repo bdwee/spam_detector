@@ -17,4 +17,10 @@ y_test = y[-100:,]
 clf = MultinomialNB()
 clf.fit(X_train, y_train)
 s = clf.score(X_test, y_test)
-print("score: ", s)
+print("score Naive Bayes: ", s)
+
+
+from sklearn.ensemble import AdaBoostClassifier
+mdl = AdaBoostClassifier()
+mdl.fit(X_train, y_train)
+print("score Adaboost: ", mdl.score(X_test, y_test))
